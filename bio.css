@@ -9,6 +9,7 @@
   font-family: 'sans-serif';
   font-size: 1.0em;
   font-style: italic;
+  font-weight: bold;
   width: 8%;
   margin-top: 1%;
   margin-left: 1%;
@@ -22,19 +23,18 @@
   font-family: 'Bad films';
   font-style: italic;
   color: rgb(220, 160, 160);
-  padding: 3%
+  padding: 3%;
 }
 
 .info1
 {
   font-family: 'sans-serif';
-  font-style: italic;
   font-weight: bolder;
   color: rgb(235, 0, 130);
   margin-left: 2%;
   padding: 1%;
   position: absolute;
-  top: 32%;
+  top: 35%;
 }
 
 .info2
@@ -46,7 +46,7 @@
   margin-left: 2%;
   padding: 1%;
   position: absolute;
-  top: 40%;
+  top: 39%;
 }
 
 .footer
@@ -54,7 +54,7 @@
   font-family: 'sans-serif';
   font-size: 0.8em;
   color: rgb(240, 230, 95);
-  text-align: end;
+  float: right;
   padding-top: 30px;
-  padding-right: 5px;
+  padding-right: 7px;
 }
