@@ -1,0 +1,60 @@
+@font-face
+{
+  font-family: Bad Films;
+  src: local(Bad Films), url(badfilms.woff);
+}
+
+.list
+{
+  font-family: 'sans-serif';
+  font-size: 1.0em;
+  font-style: italic;
+  width: 8%;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+  background-color: rgb(180, 195, 255);
+  float: left;
+}
+
+.slogan
+{
+  font-family: 'Bad films';
+  font-style: italic;
+  color: rgb(220, 160, 160);
+  padding: 3%
+}
+
+.info1
+{
+  font-family: 'sans-serif';
+  font-style: italic;
+  font-weight: bolder;
+  color: rgb(235, 0, 130);
+  margin-left: 2%;
+  padding: 1%;
+  position: absolute;
+  top: 32%;
+}
+
+.info2
+{
+  font-family: 'sans-serif';
+  font-style: italic;
+  font-weight: bolder;
+  color: rgb(235, 0, 130);
+  margin-left: 2%;
+  padding: 1%;
+  position: absolute;
+  top: 40%;
+}
+
+.footer
+{
+  font-family: 'sans-serif';
+  font-size: 0.8em;
+  color: rgb(240, 230, 95);
+  text-align: end;
+  padding-top: 30px;
+  padding-right: 5px;
+}
