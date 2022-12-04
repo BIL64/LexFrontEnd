@@ -1,84 +1,75 @@
-@font-face
-{
-  font-family: Bad Films;
-  src: local(Bad Films), url(badfilms.woff);
+@font-face {
+    font-family: Bad Films;
+    src: local(Bad Films), url("badfilms.woff");
 }
 
-aside
-{
-  font-family: 'sans-serif';
-  font-size: 1.0em;
-  font-style: italic;
-  font-weight: bold;
-  width: 8%;
-  margin-top: 1%;
-  margin-left: 1%;
-  margin-right: 1%;
-  background-color: rgb(180, 195, 255);
-  float: left;
+aside {
+    font-family: 'sans-serif';
+    font-size: 1.0em;
+    font-style: italic;
+    font-weight: bold;
+    width: 8%;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color: rgb(180, 195, 255);
+    float: left;
 }
 
-header
-{
-  height: 20%;
-  margin-left: 10%;
-  margin-right: 2%;
-  background-color: rgb(170, 10, 10)
+header {
+    height: 20%;
+    margin-left: 10%;
+    margin-right: 2%;
+    background-color: rgb(170, 10, 10);
 }
 
-.slogan
-{
-  font-family: 'Bad films';
-  font-style: italic;
-  color: rgb(220, 160, 160);
-  padding: 3%;
+.slogan {
+    font-family: 'Bad films';
+    font-style: italic;
+    color: rgb(220, 160, 160);
+    padding: 3%;
 }
 
-article
-{
-  height: 72%;
-  margin-left: 10%;
-  margin-right: 2%;
-  background-color: rgb(170, 10, 10)
+article {
+    height: 72%;
+    margin-left: 10%;
+    margin-right: 2%;
+    background-color: rgb(170, 10, 10);
 }
 
-.info1
-{
-  font-family: 'sans-serif';
-  font-weight: bolder;
-  color: rgb(235, 0, 130);
-  margin-left: 2%;
-  padding: 1%;
-  position: absolute;
-  top: 35%;
+.info1 {
+    font-family: 'sans-serif';
+    font-weight: bolder;
+    color: rgb(235, 0, 130);
+    margin-left: 2%;
+    padding: 1%;
+    position: absolute;
+    top: 35%;
 }
 
-.info2
-{
-  font-family: 'sans-serif';
-  font-style: italic;
-  font-weight: bolder;
-  color: rgb(235, 0, 130);
-  margin-left: 2%;
-  padding: 1%;
-  position: absolute;
-  top: 39%;
+.info2 {
+    font-family: 'sans-serif';
+    font-style: italic;
+    font-weight: bolder;
+    color: rgb(235, 0, 130);
+    margin-left: 2%;
+    padding: 1%;
+    position: absolute;
+    top: 39%;
 }
 
-footer
-{
-  height: 50px;
-  background-color: rgb(75, 20, 5);
-  margin-right: 2%;
-  margin-top: 1%
+footer {
+    height: 50px;
+    background-color: rgb(75, 20, 5);
+    margin-right: 2%;
+    margin-top: 1%;
 }
 
-.foot
-{
-  font-family: 'sans-serif';
-  font-size: 0.8em;
-  color: rgb(240, 230, 95);
-  float: right;
-  padding-top: 30px;
-  padding-right: 7px;
+.foot {
+    font-family: 'sans-serif';
+    font-size: 0.8em;
+    color: rgb(240, 230, 95);
+    float: right;
+    padding-top: 30px;
+    padding-right: 7px;
 }
