@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="sv"> <!--Av Björn Lindqvist 221213-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <title>Ovn9</title>
+</head>
+
+<script>
+  let flag;
+</script>
+
+<body>
+
+  <header>
+
+    <nav class="navbar navbar-expand fixed-top navbar-dark bg-math">
+      <div class="container">
+
+        <ul class="nav navbar-nav">
+          <li class="nav item">
+            <a class="navbar-brand" href="index.html">MATH SITE</a>
+          </li>
+          <li class="nav item">
+            <a class="nav-link" href="index.html">Bish-Bosh 1.0</a>
+          </li>
+          <li class="nav item active">
+            <a class="nav-link" href="bishbosh.html">Bish-Bosh 2.0</a>
+          </li>
+          <li class="nav item">
+            <a class="nav-link" href="todolist.html">To Do List</a>
+          </li>
+        </ul>
+
+      </div>    
+    </nav>
+
+  </header>
+
+  <main>
+
+    <div class="container">
+
+      <article>
+        <h4>Bish eller Bosh, det är frågan?</h4><br>
+          <div class="col-md-12 mb-3 finput">
+              Detta handlar om att ange ett intervall som börjar på 1 och där två utvalda tal ska
+              jämföras med alla talen i intervallet. De två heltalen testar om något tal i intervallet
+              är delbart, alltså utan rest. Visar det sig att Bish är delbart så visas <q>Bish</q>, är
+              Bosh delbart så visas <q>Bosh</q>. Är både Bish och Bosh delbart så visas <q>Bish-Bosh</q>.
+          </div>
+      </article>
+
+      <footer>
+        &copy; 2022 Björn Lindqvist v1.0
+      </footer>
+
+    </div>
+
+    <div class="container">
+
+      <article>
+        <div class="row">
+          <div class="col-md-12">
+            <h4 class="mb-3">Ange värden</h4>
+    
+            <form id="bb_form">
+    
+              <div class="row">
+                <div class="col-md-2 form-group finput">
+                  <label for="iinte">1 till intervallet:</label>
+                  <input type="number" class="form-control" min="0" name="inte" value="100" title="Ett positivt heltal">
+                </div>
+                <div class="col-md-2 mb-1 form-group finput">
+                  <label for="ibish">Bish:</label>
+                  <input type="number" class="form-control" min="0" name="bish" value="3" title="Ett positivt heltal">
+                </div>
+                <div class="col-md-2 mb-1 form-group finput">
+                  <label for="ibosh">Bosh:</label>
+                  <input type="number" class="form-control" min="0" name="bosh" value="4" title="Ett positivt heltal">
+                </div>
+              </div>
+
+            </form>
+    
+          </div>
+        </div>
+
+        <div class="col-md-3 mb-3 finput">
+          <button id="btn2" class="btn btn-primary" type="text">Från 1 till 100</button><br>
+        </div>
+        <div class="col-md-12 mb-3 outmath">
+            <div id="M2"></div>
+        </div>
+      </article>
+
+      <footer>
+        &copy; 2022 Björn Lindqvist v1.0
+      </footer>
+
+    </div>
+
+  </main>
+
+  <script src="bishbosh.js"></script>
+
+</body>
+
+</html>

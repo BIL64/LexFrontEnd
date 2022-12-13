@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="sv"> <!--Av Björn Lindqvist 221213-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <title>Ovn9</title>
+</head>
+
+<script src="ini.js"></script> <!--Globala variabler-->
+
+<body class="todo">
+
+  <header>
+
+    <nav class="navbar navbar-expand fixed-top navbar-dark bg-math">
+      <div class="container">
+
+        <ul class="nav navbar-nav">
+          <li class="nav item">
+            <a class="navbar-brand" href="index.html">TO DO</a>
+          </li>
+          <li class="nav item">
+            <a class="nav-link" href="index.html">Bish-Bosh 1.0</a>
+          </li>
+          <li class="nav item">
+            <a class="nav-link" href="bishbosh.html">Bish-Bosh 2.0</a>
+          </li>
+          <li class="nav item active">
+            <a class="nav-link" href="todolist.html">To Do List</a>
+          </li>
+        </ul>
+
+      </div>    
+    </nav>
+
+  </header>
+
+  <main>
+
+    <div class="container">
+
+      <article>
+        <h4>Inköpslista (max 20 artiklar)</h4><br>
+          <div class="col-md-2 btn-group finput">
+            <button type="button" id="btn3" class="btn btn-primary mb-4">Ny lista</button>
+          </div>
+          <div class="col-md-3 btn-group finput">
+            <button type="button" id="btn4" class="btn btn-primary mb-4">Spara/hämta lista</button>
+          </div>
+
+          <form id='in_form' class="hide-content">
+              
+            <div class='row'>
+
+              <div class='col-md-5 form-group finput'><!--md-5-->
+                <label for='add'>Addera varor till listan</label>
+                <input type='text' class='form-control' name='add' title='Valfri beskrivning'>
+              </div>
+
+              <div class='col form-group finput'><br><!--md-2-->
+                <button type="button" id='btn5' class='btn btn-primary butpos' title='Lägger till i listan'>OK</button>
+              </div>
+
+              <div class='col form-group finput'><br><!--md-1-->
+                <button type="button" id='btn6' class='btn btn-primary butpos' title='Ökar teckenhöjden'>+</button>
+              </div>
+
+              <div class='col form-group finput'><br><!--md-1-->
+                <button type="button" id='btn7' class='btn btn-primary butpos' title='Minskar teckenhöjden'>-</button>
+              </div>
+
+              <div class='col form-group finput'><br><!--md-1-->
+                <button type="button" id='btn8' class='btn btn-primary butpos' title='Markerar alla'>M</button>
+              </div>
+
+              <div class='col form-group finput'><br><!--md-1-->
+                <button type="button" id='btn9' class='btn btn-primary butpos' title='Avmarkerar alla'>A</button>
+              </div>
+
+            </div>
+            
+          </form>
+
+            <div class="col-md-12 listout"> <!--Display: none (rad0) används för att dölja oanvända rader -->
+              <ul id="UL1">
+                <li class='rad0' id='L0'><span id='0'></span><button class='radund' id='U0'>ångra</button>
+                  <button class='radrem' id='R0'>ta bort</button></li>
+                <li class='rad0' id='L1'><span id='1'></span><button class='radund' id='U1'>ångra</button>
+                  <button class='radrem' id='R1'>ta bort</button></li>
+                <li class='rad0' id='L2'><span id='2'></span><button class='radund' id='U2'>ångra</button>
+                  <button class='radrem' id='R2'>ta bort</button></li>
+                <li class='rad0' id='L3'><span id='3'></span><button class='radund' id='U3'>ångra</button>
+                  <button class='radrem' id='R3'>ta bort</button></li>
+                <li class='rad0' id='L4'><span id='4'></span><button class='radund' id='U4'>ångra</button>
+                  <button class='radrem' id='R4'>ta bort</button></li>
+                <li class='rad0' id='L5'><span id='5'></span><button class='radund' id='U5'>ångra</button>
+                  <button class='radrem' id='R5'>ta bort</button></li>
+                <li class='rad0' id='L6'><span id='6'></span><button class='radund' id='U6'>ångra</button>
+                  <button class='radrem' id='R6'>ta bort</button></li>
+                <li class='rad0' id='L7'><span id='7'></span><button class='radund' id='U7'>ångra</button>
+                  <button class='radrem' id='R7'>ta bort</button></li>
+                <li class='rad0' id='L8'><span id='8'></span><button class='radund' id='U8'>ångra</button>
+                  <button class='radrem' id='R8'>ta bort</button></li>
+                <li class='rad0' id='L9'><span id='9'></span><button class='radund' id='U9'>ångra</button>
+                  <button class='radrem' id='R9'>ta bort</button></li>
+                <li class='rad0' id='L10'><span id='10'></span><button class='radund' id='U10'>ångra</button>
+                  <button class='radrem' id='R10'>ta bort</button></li>
+                <li class='rad0' id='L11'><span id='11'></span><button class='radund' id='U11'>ångra</button>
+                  <button class='radrem' id='R11'>ta bort</button></li>
+                <li class='rad0' id='L12'><span id='12'></span><button class='radund' id='U12'>ångra</button>
+                  <button class='radrem' id='R12'>ta bort</button></li>
+                <li class='rad0' id='L13'><span id='13'></span><button class='radund' id='U13'>ångra</button>
+                  <button class='radrem' id='R13'>ta bort</button></li>
+                <li class='rad0' id='L14'><span id='14'></span><button class='radund' id='U14'>ångra</button>
+                  <button class='radrem' id='R14'>ta bort</button></li>
+                <li class='rad0' id='L15'><span id='15'></span><button class='radund' id='U15'>ångra</button>
+                  <button class='radrem' id='R15'>ta bort</button></li>
+                <li class='rad0' id='L16'><span id='16'></span><button class='radund' id='U16'>ångra</button>
+                  <button class='radrem' id='R16'>ta bort</button></li>
+                <li class='rad0' id='L17'><span id='17'></span><button class='radund' id='U17'>ångra</button>
+                  <button class='radrem' id='R17'>ta bort</button></li>
+                <li class='rad0' id='L18'><span id='18'></span><button class='radund' id='U18'>ångra</button>
+                  <button class='radrem' id='R18'>ta bort</button></li>
+                <li class='rad0' id='L19'><span id='19'></span><button class='radund' id='U19'>ångra</button>
+                  <button class='radrem' id='R19'>ta bort</button></li>
+                <li class='rad0' id='L20'><span id='20'></span><button class='radund' id='U20'>ångra</button>
+                  <button class='radrem' id='R20'>ta bort</button></li>
+              </ul>
+            </div>
+
+            <div id="savebut" class="hide-content"><br><br>
+              <button type="button" id="btn10" class="btn btn-primary mb-4 finput">Spara listan</button>
+              <button type="button" id="btn11" class="btn btn-primary mb-1 finput" style="position: relative; top: -10px"
+              title="Raderar alla sparade listor...">R</button>
+            </div>
+            <div id="S1" class="save0">
+              <div id="SL0" title="Klicka för att ladda!"></div>
+              <div id="SL1" title="Klicka för att ladda!"></div>
+              <div id="SL2" title="Klicka för att ladda!"></div>
+              <div id="SL3" title="Klicka för att ladda!"></div>
+              <div id="SL4" title="Klicka för att ladda!"></div>
+            </div>
+      </article>
+
+      <footer>
+        &copy; 2022 Björn Lindqvist v1.0
+      </footer>
+
+    </div>
+
+  </main>
+
+  <script src="todo.js"></script>
+
+</body>
+
+</html>
