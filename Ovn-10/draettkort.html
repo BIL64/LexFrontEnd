@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"> <!--Av Björn Lindqvist 221214-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <title>Ovn10</title>
+</head>
+
+<body>
+
+  <header class="col-md-12"> <!--Rubrik-->
+    <h3>draw a card...</h3><br>
+  </header>
+
+  <div class="col-md-2 finput">
+    <!--Det är superviktigt att typa alla knappar med "button"!!!-->
+    <button type="button" id="btn1" class="btn btn-success">GO</button><br><br>
+  </div>
+    
+  <div id="indiv" class="col-md-5 form-group"></div>
+
+  <script> // JS-funktionen som hämtar datan (type="metode" behövs inte här). Beautified!
+
+    btn1.addEventListener('click', () => { // När goknappen trycks ned.
+    let str = 'https://deckofcardsapi.com/api/deck/new/draw/?count=2';
+    getApi1(str);
+    })
+
+    function getApi1(fullUri) {
+        fetch(fullUri)
+            .then(res => res.json())
+            .then(data => {
+                let id_card = data.deck_id;
+                let newway = 'https://deckofcardsapi.com/api/deck/' + id_card.toString() + '/dr' +
+                        'aw/?count=1';
+                getApi2(newway);
+            })
+            .catch(err => console.log(err))
+        }
+
+    function getApi2(fullUri) {
+        fetch(fullUri)
+            .then(res => res.json())
+            .then(data => {
+                let c_image = data
+                    .cards[0]
+                    .image;
+                document
+                    .getElementById('indiv')
+                    .innerHTML = "<img src=" + c_image + " title='A random card'></img>";
+            })
+            .catch(err => console.log(err))
+        }
+
+  </script>
+
+</body>
+
+</html>
