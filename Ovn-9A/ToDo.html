@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="sv"> <!--Av Björn Lindqvist 221216-->
+<!--A versionen är en betydligt smartare variant av ToDo än B versionen. Först funderade jag på att försöka-->
+<!--injicera javascript i HTML-dokumentet, men efter en del övervägande och studier om detta på nätet så-->
+<!--skrotades denna idé. Det är helt enkelt en dålig lösning... Det enda som återstod var att lägga upp en-->
+<!--synnerligen hårdkodad och fördefinerad lista som dock fungerar. Ungefär som en array som man sätter till-->
+<!--ett värde. Stelare och oflexibelare än så är svårt att tänka sig... När jag såg Demitris lösning så fick jag-->
+<!--en rejäl tankeställare! Klasser kan tydligen lösa den här typen av problem ganska enkelt. Att man instansierar-->
+<!--JS-kod som lyssnar på mushändelser. Det medförde att listan kan göras oändligt lång trots mindre kod och mindre-->
+<!--komplicerad kod. Dock måste arrayer användas eftersom listorna ska sparas. Det här anser jag var en mycket-->
+<!--viktig insikt och som jag är ganska säker på kommer att medföra optimalare sätt att lösa kodproblem i framtiden.-->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <title>Ovn9A</title>
+</head>
+
+<script src="ini.js"></script> <!--Globala variabler-->
+
+<body class="todo">
+
+  <main>
+
+    <div class="container">
+
+      <article>
+        <h4>Inköpslista</h4><br>
+          <div class="col-md-2 btn-group finput">
+            <button type="button" id="btn3" class="btn btn-primary mb-4">Ny lista</button>
+          </div>
+          <div class="col-md-3 btn-group finput">
+            <button type="button" id="btn4" class="btn btn-primary mb-4">Spara/hämta lista</button>
+          </div>
+
+          <form id='in_form' class="hide-content">
+              
+            <div class='row'>
+
+              <div class='col-md-5 form-group finput'><!--md-5-->
+                <label for='add'>Addera varor till listan</label>
+                <input type='text' class='form-control' name='add' title='Valfri beskrivning'>
+              </div>
+
+              <div class='col form-group finput'><br><!--md-2-->
+                <button type="button" id='btn5' class='btn btn-primary butpos' title='Lägger till i listan'>OK</button>
+              </div>
+
+              <div class='col form-group finput'><br><!--md-1-->
+                <button type="button" id='btn6' class='btn btn-primary butpos' title='Ökar teckenhöjden'>+</button>
+              </div>
+
+              <div class='col form-group finput'><br><!--md-1-->
+                <button type="button" id='btn7' class='btn btn-primary butpos' title='Minskar teckenhöjden'>-</button>
+              </div>
+
+              <div class='col form-group finput'><br><!--md-1-->
+                <button type="button" id='btn8' class='btn btn-primary butpos' title='Markerar alla'>M</button>
+              </div>
+
+              <div class='col form-group finput'><br><!--md-1-->
+                <button type="button" id='btn9' class='btn btn-primary butpos' title='Avmarkerar alla'>A</button>
+              </div>
+
+            </div>
+            
+          </form>
+
+            <div class="col-md-12 listout">
+              <ul id="UL"></ul>
+            </div>
+
+            <div id="savebut" class="hide-content"><br><br>
+              <button type="button" id="btn10" class="btn btn-primary mb-4 finput">Spara listan</button>
+              <button type="button" id="btn11" class="btn btn-primary mb-1 finput" style="position: relative; top: -10px"
+              title="Raderar alla sparade listor...">R</button>
+            </div>
+            <div id="S1" class="save0">
+              Max 5 listor...
+              <div id="SL0" title="Klicka för att ladda!"></div>
+              <div id="SL1" title="Klicka för att ladda!"></div>
+              <div id="SL2" title="Klicka för att ladda!"></div>
+              <div id="SL3" title="Klicka för att ladda!"></div>
+              <div id="SL4" title="Klicka för att ladda!"></div>
+            </div>
+      </article>
+
+      <footer>
+        &copy; 2022 Björn Lindqvist v1.0
+      </footer>
+
+    </div>
+
+  </main>
+
+  <script src="todo.js"></script>
+
+</body>
+
+</html>
