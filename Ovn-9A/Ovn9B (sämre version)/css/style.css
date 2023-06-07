@@ -12,14 +12,6 @@ body {
   background-repeat: repeat;
 }
 
-.hide-content {
-  display: none;
-}
-
-.show {
-  display: block;
-}
-
 .bg-math {
   background-color: #66adff;
 }
@@ -61,7 +53,6 @@ article {
   font-family: 'Courier New', Courier, monospace;  
   font-size: 0.9em;
 }
-
 
 footer {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -109,11 +100,7 @@ footer {
   text-decoration: line-through;
 }
 
-.save0 {
-  display: none;
-}
-
-.save1 {
+.saveit {
   font-family: Verdana, Geneva, Tahoma, sans-serif; 
   font-size: 0.9em;
   font-weight: bold;

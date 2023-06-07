@@ -12,20 +12,20 @@ comS4But.onmouseup = open4List;
 btn3.addEventListener('click', () => { // Fäller ned inmatningsmenyn.
   const klass = document.getElementById('savebut').classList;
 
-  if (rak > 0)
+  if (counter > 0)
   {
     let tabort = false;
     if (confirm("Detta raderar hela listan...")) tabort = true;
       if (tabort) {
         removeList();
-        document.getElementById('in_form').classList.toggle('show');
-        if (klass == "hide-content show") document.getElementById('savebut').classList.toggle('show');
-        document.getElementById("S1").className = "save0"; // Byter klass.
+        document.getElementById('in_form').classList.toggle('d-block');
+        if (klass == "d-none d-block") document.getElementById('savebut').classList.toggle('d-block');
+        document.getElementById("S1").className = "d-none"; // Byter klass.
       }
   }
   else
   {
-    if (klass != "hide-content show") document.getElementById('in_form').classList.toggle('show');
+    if (klass != "d-none d-block") document.getElementById('in_form').classList.toggle('d-block');
   }
 })
 
@@ -33,9 +33,9 @@ btn4.addEventListener('click', () => { // Visar sparaknappen och uppdaterar spar
   const klass1 = document.getElementById('in_form').className;
   const klass2 = document.getElementById('savebut').classList;
 
-  if (klass1 == "hide-content show") document.getElementById('savebut').classList.toggle('show');
+  if (klass1 == "d-none d-block") document.getElementById('savebut').classList.toggle('d-block');
   else alert("Öppna en ny lista först...");
-  if (klass2 == "hide-content show")
+  if (klass2 == "d-none d-block")
   {
     for (i=1; i<=5; i++) // Ändras ej!
     {
@@ -44,21 +44,21 @@ btn4.addEventListener('click', () => { // Visar sparaknappen och uppdaterar spar
         document.getElementById(`SL${i-1}`).innerHTML = `ToDo-lista ${i}`;
       }
     }
-    document.getElementById("S1").className = "save1"; // Byter klass.
+    document.getElementById("S1").className = "saveit"; // Byter klass.
   }
-  else document.getElementById("S1").className = "save0"; // Byter klass.
+  else document.getElementById("S1").className = "d-none"; // Byter klass.
 })
 
 btn10.addEventListener('click', async () => { // Sparar listan i localStorage.
 
-  if (rak < 1) alert("Listan är tom...");
+  if (counter < 1) alert("Listan är tom...");
   else
   {
-    if (s_rak > 4) s_rak = 1; else s_rak++;
+    if (s_counter > 4) s_counter = 1; else s_counter++;
 
     for (i=1; i<=5; i++) // Ändras ej!
     {
-      if (s_rak == i)
+      if (s_counter == i)
       {
         s_lista[i-1] = `ToDo-lista ${i}`;
         localStorage.setItem(`ToDo-lista ${i}`, JSON.stringify(listan));
@@ -88,7 +88,7 @@ btn11.addEventListener('click', async () => { // Raderar alla 5 sparade listor.
       document.getElementById("SL2").innerHTML = "";
       document.getElementById("SL3").innerHTML = "";
       document.getElementById("SL4").innerHTML = "";
-      s_rak = 0;
+      s_counter = 0;
     }
 })
 
@@ -99,14 +99,16 @@ btn5.addEventListener('click', () => { // Adderar rader.
 
   let element = document.getElementById('UL');
 
-  let str = "<li id='L" + rak + "' class='rad1'><span id='" + rak + "'>" + v_add + "</span><button id='U" + rak + "' " +
-  "class='radund'>ångra</button><button id='R" + rak + "' class='radrem'>ta bort</button></li>";
+  let str = "<li id='L" + counter + "' class='rad1'><span id='" + counter + "'>" + v_add + "</span><button id='U" + counter + "' " +
+  "class='radund'>ångra</button><button id='R" + counter + "' class='radrem'>ta bort</button></li>";
   element.insertAdjacentHTML('afterbegin', str);
 
-  listan[rak] = [v_add, 1]; // Laddar 2Darrayen.
+  listan[counter] = [v_add, 1]; // Laddar 2Darrayen.
   let forline = new Eventforline; // Instansiering av klass.
-  forline.makeEvent(rak);
-  rak++;
+  forline.makeEvent(counter);
+
+  SetCurrentButtsize() // Sätter rådande storlek på knapparna.
+  counter++;
 })
 
 class Eventforline { // Klassen lägger till lyssnare av mushändelser till varje ny rad.
@@ -170,6 +172,18 @@ btn7.addEventListener('click', () => { // Mindre listtext.
   }
 })
 
+function SetCurrentButtsize() // Sätter rådande knappstorlek.
+{
+  element = document.getElementsByClassName('radund');
+  for (i=0; i<element.length; i++){
+    element[i].style.height = `${Math.round(17 * fsize)}px`;
+  }
+  element = document.getElementsByClassName('radrem');
+  for (i=0; i<element.length; i++){
+    element[i].style.height = `${Math.round(17 * fsize)}px`;
+  }
+}
+
 btn8.addEventListener('click', () => { // Markerar alla.
   const c = document.getElementsByClassName('listout')[0];
   const x = c.getElementsByClassName('rad1');
@@ -218,7 +232,7 @@ function open4List() {
 
 function loadArray(arrin) // Laddar upp en sparad lista.
 {
-  rak = 0;
+  counter = 0;
   removeList();
   const element = document.getElementById('UL');
 
@@ -226,16 +240,17 @@ function loadArray(arrin) // Laddar upp en sparad lista.
   {
     if (arrin[i][0] != "")
     {
-      let str = "<li id='L" + rak + "' class='rad" + arrin[i][1] + "'><span id='" + rak + "'>" + arrin[i][0] +
-      "</span><button id='U" + rak + "' class='radund'>ångra</button><button id='R" + rak +
+      let str = "<li id='L" + counter + "' class='rad" + arrin[i][1] + "'><span id='" + counter + "'>" + arrin[i][0] +
+      "</span><button id='U" + counter + "' class='radund'>ångra</button><button id='R" + counter +
       "' class='radrem'>ta bort</button></li>";
       element.insertAdjacentHTML('afterbegin', str);
       let forline = new Eventforline; // Instansiering av klass.
-      forline.makeEvent(rak);
-      listan[rak] = arrin[rak];
-      rak++;
+      forline.makeEvent(counter);
+      listan[counter] = arrin[counter];
+      counter++;
     }
   }
+  SetCurrentButtsize() // Sätter rådande storlek på knapparna.
 }
 
 function removeList() // Raderar alla rader.
@@ -254,5 +269,5 @@ function removeList() // Raderar alla rader.
   for (i=0; i<100; i++) {
     listan[i] = ["", 0];
   }
-  rak = 0;
+  counter = 0;
 }

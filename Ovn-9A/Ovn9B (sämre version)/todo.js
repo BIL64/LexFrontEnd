@@ -55,20 +55,20 @@ com20But.onmouseup = mark20;
 btn3.addEventListener('click', () => { // Fäller ned inmatningsmenyn.
   const klass = document.getElementById('savebut').classList;
 
-  if (rak > 0)
+  if (counter > 0)
   {
     let tabort = false;
     if (confirm("Detta raderar hela listan...")) tabort = true;
       if (tabort) {
         removeList();
-        document.getElementById('in_form').classList.toggle('show');
-        if (klass == "hide-content show") document.getElementById('savebut').classList.toggle('show');
-        document.getElementById("S1").className = "save0"; // Byter klass.
+        document.getElementById('in_form').classList.toggle('d-block');
+        if (klass == "d-none d-block") document.getElementById('savebut').classList.toggle('d-block');
+        document.getElementById("S1").className = "d-none"; // Byter klass.
       }
   }
   else
   {
-    if (klass != "hide-content show") document.getElementById('in_form').classList.toggle('show');
+    if (klass != "d-none d-block") document.getElementById('in_form').classList.toggle('d-block');
   }
 })
 
@@ -76,9 +76,9 @@ btn4.addEventListener('click', () => { // Visar sparaknappen och uppdaterar spar
   const klass1 = document.getElementById('in_form').className;
   const klass2 = document.getElementById('savebut').classList;
 
-  if (klass1 == "hide-content show") document.getElementById('savebut').classList.toggle('show');
+  if (klass1 == "d-none d-block") document.getElementById('savebut').classList.toggle('d-block');
   else alert("Öppna en ny lista först...");
-  if (klass2 == "hide-content show")
+  if (klass2 == "d-none d-block")
   {
     for (i=1; i<=5; i++) // Ändras ej!
     {
@@ -87,21 +87,21 @@ btn4.addEventListener('click', () => { // Visar sparaknappen och uppdaterar spar
         document.getElementById(`SL${i-1}`).innerHTML = `ToDo-lista ${i}`;
       }
     }
-    document.getElementById("S1").className = "save1"; // Byter klass.
+    document.getElementById("S1").className = "saveit"; // Byter klass.
   }
-  else document.getElementById("S1").className = "save0"; // Byter klass.
+  else document.getElementById("S1").className = "d-none"; // Byter klass.
 })
 
 btn10.addEventListener('click', async () => { // Sparar listan i localStorage.
 
-  if (rak < 1) alert("Listan är tom...");
+  if (counter < 1) alert("Listan är tom...");
   else
   {
-    if (s_rak > 4) s_rak = 1; else s_rak++;
+    if (s_counter > 4) s_counter = 1; else s_counter++;
 
     for (i=1; i<=5; i++) // Ändras ej!
     {
-      if (s_rak == i)
+      if (s_counter == i)
       {
         s_lista[i-1] = `ToDo-lista ${i}`;
         localStorage.setItem(`ToDo-lista ${i}`, JSON.stringify(listan));
@@ -131,20 +131,20 @@ btn11.addEventListener('click', async () => { // Raderar alla 5 sparade listor.
       document.getElementById("SL2").innerHTML = "";
       document.getElementById("SL3").innerHTML = "";
       document.getElementById("SL4").innerHTML = "";
-      s_rak = 0;
+      s_counter = 0;
     }
 })
 
 btn5.addEventListener('click', () => { // Adderar varor.
-  if (rak > 19) alert("Max 20 artiklar..."); // max - 1.
+  if (counter > 19) alert("Max 20 artiklar..."); // max - 1.
   else
   {
     let v_add = document.getElementById('in_form').elements['add'].value;
     v_add = "☼ " + v_add;
-    document.getElementById(`${rak}`).innerHTML = v_add; // Adderar text i spantaggen.
-    listan[rak] = [v_add, 1]; // Laddar 2Darrayen.
-    document.getElementById(`L${rak}`).className = "rad1"; // Byter klass.
-    rak++;
+    document.getElementById(`${counter}`).innerHTML = v_add; // Adderar text i spantaggen.
+    listan[counter] = [v_add, 1]; // Laddar 2Darrayen.
+    document.getElementById(`L${counter}`).className = "rad1"; // Byter klass.
+    counter++;
   }
 })
 
@@ -178,7 +178,7 @@ btn7.addEventListener('click', () => { // Mindre listtext.
 })
 
 btn8.addEventListener('click', () => { // Markerar alla.
-  for (i=0; i<rak; i++) // Endast aktuella berörs.
+  for (i=0; i<counter; i++) // Endast aktuella berörs.
   {
     document.getElementById(`L${i}`).className = "rad2";
     listan[i][1] = 2;
@@ -186,7 +186,7 @@ btn8.addEventListener('click', () => { // Markerar alla.
 })
 
 btn9.addEventListener('click', () => { // Avmarkerar alla.
-  for (i=0; i<rak; i++) // Endast aktuella berörs.
+  for (i=0; i<counter; i++) // Endast aktuella berörs.
   {
     document.getElementById(`L${i}`).className = "rad1";
     listan[i][1] = 1;
@@ -549,12 +549,12 @@ R20.addEventListener('click', () => { // Tar bort en listrad och ändrar 2Darray
 
 function loadArray(arrin) // Laddar upp en sparad lista.
 {
-  rak = 0;
+  counter = 0;
   for (i=0; i<21; i++) // <-- arrayens verkliga längd
   {
     document.getElementById(`${i}`).innerHTML = arrin[i][0];
     document.getElementById(`L${i}`).className = `rad${arrin[i][1]}`;
-    if (arrin[i][0] != "") rak++;
+    if (arrin[i][0] != "") counter++;
     listan[i] = arrin[i];
   }
 }
@@ -586,11 +586,11 @@ function removeList() // Raderar hela listan.
   for (i=0; i<21; i++) // <-- arrayens verkliga längd
   {
     document.getElementById(`${i}`).innerHTML = "";
-    document.getElementById(`L${i}`).className = "rad0";
+    document.getElementById(`L${i}`).className = "d-none";
     listan[i][0] = "";
     listan[i][1] = 0;
   }
-  rak = 0;
+  counter = 0;
 }
 
 function printList() // Skriver ut listan och laddar 2Darrayen om någon rad har tagits bort. 
@@ -598,9 +598,9 @@ function printList() // Skriver ut listan och laddar 2Darrayen om någon rad har
   for (i=0; i<21; i++) // <-- arrayens verkliga längd
   {
     document.getElementById(`${i}`).innerHTML = listan[i][0];
-    if (listan[i][1] == 0) document.getElementById(`L${i}`).className = "rad0";
+    if (listan[i][1] == 0) document.getElementById(`L${i}`).className = "d-none";
     else if (listan[i][1] == 1) document.getElementById(`L${i}`).className = "rad1";
     else if (listan[i][1] == 2) document.getElementById(`L${i}`).className = "rad2";
   }
-  rak--;
+  counter--;
 }
