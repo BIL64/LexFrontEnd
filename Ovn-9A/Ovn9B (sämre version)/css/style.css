@@ -89,12 +89,14 @@ footer {
 }
 
 .rad1 {
+  cursor: pointer;
   display: block;
   color: darkblue;
   text-decoration: none;
 }
 
 .rad2 {
+  cursor: pointer;
   display: block;
   color: gray;
   text-decoration: line-through;
