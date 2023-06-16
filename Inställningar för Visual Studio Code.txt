@@ -1,0 +1,24 @@
+Åtgärder för att i realtid kunna se ändringar som man gör i koden i Edge.
+
+Två extensions måste installeras.
+
+1. Microsoft Edge Tools for VS Code v2.1.2.
+
+2. Live Server (Five Server) v0.2.3.
+
+Förfarande med extension 2
+	Klicka på "Go Live" - den blå listen.
+	Nu startar Edge.
+	Delar man fönster med Visual Studio Code och Edge så har man nu en fungerande konfiguration.
+
+Förfarande med extension 1
+	Klicka på Edge symbolen på snabblisten till vänster.
+	Klicka på "Launch Instance" och 1 startar.
+	Kopiera adressen i webbläsaren och klistra in den i 1 - Enter.
+	"Edge DevTools" är för felsökning och kan klickas bort.
+
+Om inte Edge uppdaterar i realtid, gör följande:
+	Klicka på "Settings" på exempelvis snabblisten.
+	Vid "Commonly Used" - "auto save" välj "afterDelay".
+
+Datum: Juni 2023.

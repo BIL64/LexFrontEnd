@@ -1,67 +1,64 @@
 html, body {
     height: 100%;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
     background-color:#ABA;
 }
 
-nav {    
-    font-family: Tahoma, Verdana, Segoe, sans-serif;
-    color: black;
+nav {
+    height: 28px;
+    color:black;
     padding: 15px;
-    height: 3%;
-    border-radius: 10px;
-}
-
-article {    
-    font-family: Tahoma, Verdana, Segoe, sans-serif;
-    color: #fff;
-    padding: 15px;
-    margin-top: 3%;
-    height: 70%;
     border-radius: 10px;
 }
 
 .navarea {
+    display: flex;
     background-color:white;
-    display:flex;
 }
 
 .navspace1 {
-    text-align: center;
-    background-color:beige ;
     width: 200px;
+    text-align: center;
     padding: 4px;
     border-radius: 7px;
+    background-color:beige ;
 }
 
 .navspace2 {
-    text-align: center;
-    width: 45%;
+    margin: 0 auto 0 auto;
     padding: 4px;
 }
 
-.navspace3 {
-    text-align: right;
-    flex-grow: 1;
+.navspace3 {   
+    margin: 0 0 0 auto;
     padding: 4px;
+}
+
+article {
+    height: 70%;
+    padding: 15px;
+    margin-top: 3%;
+    border-radius: 10px;
+    color:white;
 }
 
 .area {    
+    display: flex;
     background-color:white;
-    display:flex;
 }
 
 .space1 {
-    text-align: center;
-    background-color:#222;
     width: 35%;
+    text-align: center;
     margin-right: 15px;
     padding: 20px;
     border-radius: 10px;
+    background-color:#222;
 }
 
 .space2 {
-    background-color:#444;
     flex-grow: 1;
     padding: 20px;
     border-radius: 10px;
+    background-color:#444;
 }
